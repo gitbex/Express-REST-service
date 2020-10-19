@@ -2,7 +2,6 @@ const boardsRepo = require('./task.memory.repository');
 
 const getAll = async boardId => {
   const result = await boardsRepo.getAll(boardId);
-  // console.log(result);
   return result;
 };
 

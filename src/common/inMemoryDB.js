@@ -32,9 +32,12 @@ const removeUser = async id => {
     if (el.id === id) {
       DB.splice(index, 1);
       DB_Task.DB.forEach(val => {
-        // if (val.boardId === id) {
+        console.log(val);
+        // if (val.userId === id) {
         // console.log(val);
         val.userId = null;
+        // } else {
+        //   console.log('not');
         // }
       });
     }

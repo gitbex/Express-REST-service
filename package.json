@@ -45,11 +45,19 @@
     ]
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.19.0",
     "cross-env": "6.0.3",
     "dotenv": "8.2.0",
-    "express": "4.17.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "express-winston": "^4.0.5",
+    "http-errors": "^1.8.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
     "swagger-ui-express": "4.1.2",
     "uuid": "3.3.3",
+    "winston": "^3.3.3",
     "yamljs": "0.3.0"
   },
   "devDependencies": {

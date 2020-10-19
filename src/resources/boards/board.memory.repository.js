@@ -1,11 +1,12 @@
 const DB = require('../../common/inMemoryDB.board');
+const Handler = require('../../helperError/error');
 
 const getAll = async () => DB.getAllBoards();
 
 const get = async id => {
   const board = await DB.getBoard(id);
   if (!board) {
-    throw new Error(`The board with id: ${id} not found`);
+    throw new Handler.ErrorHandler(404, `The user with id: ${id} not found`);
   } else {
     return board;
   }

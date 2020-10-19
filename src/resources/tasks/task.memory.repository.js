@@ -1,5 +1,5 @@
-// const Task = require('./task.model');
 const DB = require('../../common/inMemoryDB.task');
+const Handler = require('../../helperError/error');
 
 const getAll = async boardId => {
   const result = await DB.getAllTasks(boardId);
@@ -10,7 +10,10 @@ const getAll = async boardId => {
 const get = async (boardId, taskId) => {
   const task = await DB.getTask(boardId, taskId);
   if (!task) {
-    throw new Error(`The user with id: ${boardId} not found`);
+    throw new Handler.ErrorHandler(
+      404,
+      `The user with boardId: ${boardId} or taskId: ${taskId} not found`
+    );
   } else {
     return task;
   }
