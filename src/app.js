@@ -11,6 +11,9 @@ const morgan = require('morgan');
 const winston = require('./helperError/winston');
 const bodyParser = require('body-parser');
 const { handleError } = require('./helperError/error');
+require('express-async-errors');
+// const helmet = require('helmet')
+// const cors = require('cors');
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));

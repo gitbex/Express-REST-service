@@ -33,25 +33,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47a71762-5c3e-4c00-9076-a15de2d953ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/helperError/error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helperError/logs/app.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helperError/logs/request.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helperError/requestLogger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helperError/winston.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mongodb/mangoose.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/boards/board.db.repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/tasks/task.db.repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/users/user.db.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/inMemoryDB.board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/inMemoryDB.board.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/inMemoryDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/inMemoryDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.memory.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.memory.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helperError/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helperError/logs/request.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/logs/request.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helperError/winston.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/winston.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.memory.repository.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/boards/board.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.memory.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.memory.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.memory.repository.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/users/user.memory.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.memory.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/users/user.memory.repository.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/users/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/users/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,13 +84,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Books" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\bexru\Desktop\NodeJS_RSS\Express-REST-service\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -121,7 +129,14 @@
       <workItem from="1602245184826" duration="113588000" />
       <workItem from="1602687884623" duration="44535000" />
       <workItem from="1602995957678" duration="25116000" />
-      <workItem from="1603125082118" duration="14685000" />
+      <workItem from="1603125082118" duration="16225000" />
+      <workItem from="1603196676792" duration="647000" />
+      <workItem from="1603206515752" duration="654000" />
+      <workItem from="1603213935854" duration="17949000" />
+      <workItem from="1603470885517" duration="108000" />
+      <workItem from="1603471027299" duration="471000" />
+      <workItem from="1603471528428" duration="122844000" />
+      <workItem from="1603883312412" duration="4262000" />
     </task>
     <servers />
   </component>
@@ -144,10 +159,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="538" y="139" width="665" height="582" key="#JavaScript" timestamp="1603876543879">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="538" y="139" width="665" height="582" key="#JavaScript/0.0.1600.860@0.0.1600.860" timestamp="1603876543879" />
     <state x="506" y="201" key="#Log_Highlighting_(ideolog)" timestamp="1602911610717">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="506" y="201" key="#Log_Highlighting_(ideolog)/0.0.1600.860@0.0.1600.860" timestamp="1602911610717" />
+    <state x="610" y="150" key="#Menus_and_Toolbars" timestamp="1603472278911">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="610" y="150" key="#Menus_and_Toolbars/0.0.1600.860@0.0.1600.860" timestamp="1603472278911" />
+    <state x="555" y="254" key="#Notifications" timestamp="1603472434791">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="555" y="254" key="#Notifications/0.0.1600.860@0.0.1600.860" timestamp="1603472434791" />
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1603472919402">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1603472919402" />
     <state width="1579" height="436" key="GridCell.Tab.0.bottom" timestamp="1602508847751">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -196,17 +227,25 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1579" height="436" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1602508847752" />
-    <state x="510" y="115" key="SettingsEditor" timestamp="1603125224036">
+    <state x="510" y="115" key="SettingsEditor" timestamp="1603473219317">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="510" y="115" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603125224036" />
+    <state x="510" y="115" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603473219317" />
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602498538658">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1602498538658" />
+    <state x="326" y="100" width="1290" height="817" key="dock-window-1" timestamp="1603870360827">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="326" y="100" width="1290" height="817" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1603870360827" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1602262261442">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1602262261442" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1603473117599">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1603473117599" />
   </component>
 </project>

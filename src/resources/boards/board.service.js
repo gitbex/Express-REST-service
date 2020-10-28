@@ -1,34 +1,14 @@
-const boardsRepo = require('./board.memory.repository');
+const boardRepo = require('./board.db.repository');
 
-const getAll = () => boardsRepo.getAll();
+const getAll = async () => boardRepo.getAll();
 
-const get = id => boardsRepo.get(id);
+const get = id => boardRepo.get(id);
 
-const create = board => boardsRepo.create(board);
+const create = user => boardRepo.create(user);
 
-const update = async (
-  id,
-  title,
-  columnId,
-  columnTitle,
-  columnOrder,
-  columnId2,
-  columnTitle2,
-  columnOrder2
-  // eslint-disable-next-line max-params
-) =>
-  boardsRepo.update(
-    id,
-    title,
-    columnId,
-    columnTitle,
-    columnOrder,
-    columnId2,
-    columnTitle2,
-    columnOrder2
-  );
+const update = (id, body) => boardRepo.update(id, body);
 
-const remove = id => boardsRepo.remove(id);
+const remove = id => boardRepo.remove(id);
 
 module.exports = {
   getAll,

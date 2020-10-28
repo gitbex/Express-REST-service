@@ -4,80 +4,77 @@ const taskService = require('./task.service');
 const Handler = require('../../helperError/error');
 const LoggerReqRes = require('../../helperError/requestLogger');
 
+// Get task by boardID
 router.route('/').get(async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     const boardId = req.params.boardId;
     const tasks = await taskService.getAll(boardId);
-    res.status(200).send(tasks);
+    res.json(tasks.map(task => Task.toResponse(task)));
   } catch (error) {
     return next(error);
   }
 });
 
+// Create Task
 router.route('/').post(async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.boardId) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
     }
+    const tasks = await taskService.create(
+      new Task.Task({
+        ...req.body,
+        boardId: req.params.boardId
+      })
+    );
+    res.json(Task.toResponse(tasks));
   } catch (error) {
     return next(error);
   }
-  const newTask = new Task({
-    title: req.body.title,
-    order: req.body.order,
-    description: req.body.description,
-    userId: req.body.userId,
-    boardId: req.params.boardId,
-    columnId: req.body.columnId
-  });
-  const tasks = await taskService.create(newTask);
-  res.status(200).send(tasks);
 });
 
+// Get Task by ID
 router.route('/:id').get(async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
-    if (!req.params.boardId || !req.params.id) {
+    if (!req.params.id || !req.params.boardId) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
     }
-    const tasks = await taskService.get(req.params.boardId, req.params.id);
-    res.status(200).send(tasks);
+    const { id, boardId } = req.params;
+    const task = await taskService.get(boardId, id);
+    res.json(Task.toResponse(task));
   } catch (error) {
     return next(error);
   }
 });
 
+// Update Task
 router.route('/:id').put(async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
     }
-    const task = await taskService.update(
-      req.params.id,
-      req.body.title,
-      req.body.order,
-      req.body.description,
-      req.body.userId,
-      req.params.boardId,
-      req.body.columnId
-    );
-    res.status(200).send(task);
+    const { id, boardId } = req.params;
+    const task = await taskService.update(id, boardId, req.body);
+    res.json(Task.toResponse(task));
   } catch (error) {
     return next(error);
   }
 });
 
+// Delete Task
 router.route('/:id').delete(async (req, res, next) => {
+  LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
     }
-    const task = await taskService.remove(req.params.id, req.params.boardId);
-
-    res.status(200).send(task);
+    const { id, boardId } = req.params;
+    const task = await taskService.remove(id, boardId);
+    res.send(task);
   } catch (error) {
     return next(error);
   }
