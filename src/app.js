@@ -13,6 +13,7 @@ const winston = require('./helperError/winston');
 const bodyParser = require('body-parser');
 const { handleError } = require('./helperError/error');
 require('express-async-errors');
+const logger = require('./helperError/winston');
 // const helmet = require('helmet')
 // const cors = require('cors');
 
@@ -30,19 +31,6 @@ app.use('/', (req, res, next) => {
   next();
 });
 
-// app.use((req, res, next) => {
-//   if (req.method === 'GET') {
-//     res.send('GET request are disabled');
-//   } else {
-//     return next();
-//   }
-// });
-
-// // Function for maintenance mode
-// app.use((req, res) => {
-//   res.status(503).send('Page under maintenance');
-// });
-
 app.use(
   morgan(
     ':date[web], METHOD::method, URL::url, STATUS::status, TIME::response-time ms, RES::res[content-length]',
@@ -52,8 +40,6 @@ app.use(
   )
 );
 app.use('/login', loginRouter);
-
-// app(authorisation)
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 boardRouter.use('/:boardId/tasks', taskRouter);
@@ -68,7 +54,7 @@ app.use(methodOverride());
 
 app.use((err, req, res, next) => {
   if (err.statusCode === undefined) {
-    console.error(err.stack);
+    logger.error(err.stack);
     res.status(500).send(`500. Internal Server Error ${err.message}`);
     next();
     return;

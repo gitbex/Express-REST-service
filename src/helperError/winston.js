@@ -6,8 +6,8 @@ const logger = new winston.createLogger({
       filename: './src/helperError/logs/app.log',
       level: 'debug',
       format: winston.format.json(),
-      // handleExceptions: true,
-      // handleRejections: true,
+      handleExceptions: true,
+      handleRejections: true,
       colorize: true,
       json: true,
       timestamp: true

@@ -12,20 +12,16 @@ connectToDB(() => {
 // Exceptions catcher
 process.on('uncaughtException', err => {
   setTimeout(() => {
-    console.error(
-      `${new Date().toUTCString()} uncaughtException:`,
-      err.message
-    );
-    console.error(err.stack);
-    // eslint-disable-next-line no-process-exit
-    process.exit(0);
+    logger.error(`${new Date().toUTCString()} uncaughtException:`, err.message);
+    logger.error(err.stack);
   }, 2000);
+  // eslint-disable-next-line no-process-exit
+  process.exit(0);
 });
-
 process.on('unhandledRejection', error => {
   setTimeout(() => {
-    console.log('Unhandled Rejection at:', error.stack || error);
-    // eslint-disable-next-line no-process-exit
-    process.exit(0);
+    logger.error('Unhandled Rejection at:', error.stack || error);
   }, 2000);
+  // eslint-disable-next-line no-process-exit
+  process.exit(0);
 });

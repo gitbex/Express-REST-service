@@ -41,7 +41,6 @@ router.route('/').post(auth, async (req, res, next) => {
 
     await result.generateAuthToken();
     const user = toResponse(result);
-    // res.send({ user, token });
     res.json(user);
   } catch (error) {
     return next(error);
@@ -56,7 +55,6 @@ router.route('/:id').put(auth, async (req, res, next) => {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
     }
     const user = await usersService.update(req.params.id, req.body);
-
     res.json(toResponse(user));
   } catch (error) {
     return next(error);

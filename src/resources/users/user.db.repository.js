@@ -8,14 +8,6 @@ const getCredentials = async (login, password) =>
 const getAll = async () => User.find({});
 
 const get = async id => {
-  // User.exists({ _id: id }, err => {
-  //   if (err) {
-  //     throw new Handler.ErrorHandler(403, 'Forbidden');
-  //   }
-  //   const user = User.findById(id);
-  //   return user;
-  // });
-
   const user = await User.findById(id);
   if (!user) {
     throw new Handler.ErrorHandler(404, `The user with id: ${id} not found`);
@@ -34,8 +26,6 @@ const update = async (id, body) => {
   const user = await User.findById(id).exec();
   toUpdate.forEach(val => (user[val] = body[val]));
   await user.save();
-  // const user = await User.updateOne({ _id: id }, body);
-  // this is another option to use
   return user;
 };
 
