@@ -2,9 +2,15 @@ const boardRepo = require('./board.db.repository');
 
 const getAll = async () => boardRepo.getAll();
 
-const get = id => boardRepo.get(id);
+const get = async id => {
+  const result = await boardRepo.get(id);
+  return result;
+};
 
-const create = user => boardRepo.create(user);
+const create = async user => {
+  const result = await boardRepo.create(user);
+  return result;
+};
 
 const update = (id, body) => boardRepo.update(id, body);
 

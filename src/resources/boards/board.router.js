@@ -3,9 +3,10 @@ const Board = require('./board.model');
 const boardService = require('./board.service');
 const Handler = require('../../helperError/error');
 const LoggerReqRes = require('../../helperError/requestLogger');
+const auth = require('../../middleware/auth');
 
 // Get all Board Router
-router.route('/').get(async (req, res) => {
+router.route('/').get(auth, async (req, res) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     const boards = await boardService.getAll();
@@ -16,7 +17,7 @@ router.route('/').get(async (req, res) => {
 });
 
 // Get Board from ID Router
-router.route('/:id').get(async (req, res) => {
+router.route('/:id').get(auth, async (req, res) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id) {
@@ -30,13 +31,10 @@ router.route('/:id').get(async (req, res) => {
 });
 
 // Create Board
-router.route('/').post(async (req, res, next) => {
+router.route('/').post(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
-    const board = await boardService.create({
-      title: req.body.title,
-      columns: [req.body.columns[0], req.body.columns[1]]
-    });
+    const board = await boardService.create(req.body);
     res.json(Board.toResponse(board));
   } catch (error) {
     return next(error);
@@ -44,11 +42,11 @@ router.route('/').post(async (req, res, next) => {
 });
 
 // Update Board
-router.route('/:id').put(async (req, res, next) => {
+router.route('/:id').put(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      res.status(403).send('Forbidden');
     }
     const board = await boardService.update(req.params.id, req.body);
     res.json(Board.toResponse(board));
@@ -58,7 +56,7 @@ router.route('/:id').put(async (req, res, next) => {
 });
 
 // Delete Board with dependent tasks
-router.route('/:id').delete(async (req, res, next) => {
+router.route('/:id').delete(auth, async (req, res, next) => {
   try {
     if (!req.params.id) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');

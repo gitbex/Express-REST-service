@@ -9,13 +9,16 @@ const getAll = async () => Board.find({});
 const get = async id => {
   const board = await Board.findById(id);
   if (!board) {
-    throw new Handler.ErrorHandler(404, `The user with id: ${id} not found`);
+    throw new Handler.ErrorHandler(404, `The board with id: ${id} not found`);
   }
   return board;
 };
 
 // Create Board
-const create = board => Board.create(board);
+const create = async board => {
+  const result = await Board.create(board);
+  return result;
+};
 
 // Update Board
 const update = async (id, body) => Board.updateOne({ _id: id }, body);

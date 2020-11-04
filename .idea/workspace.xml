@@ -33,29 +33,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47a71762-5c3e-4c00-9076-a15de2d953ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mongodb/mangoose.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/boards/board.db.repository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/tasks/task.db.repository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/users/user.db.repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/login/login.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CROSSCHECK.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/inMemoryDB.board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/inMemoryDB.board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/inMemoryDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/inMemoryDB.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helperError/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helperError/logs/request.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/logs/request.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helperError/winston.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/winston.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.memory.repository.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mongodb/mangoose.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mongodb/mangoose.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.db.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.db.repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/boards/board.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/boards/board.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.memory.repository.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/users/user.memory.repository.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/users/user.db.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.db.repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.service.js" afterDir="false" />
@@ -86,16 +80,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Books" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\bexru\Desktop\NodeJS_RSS\Express-REST-service\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.github.izhangzhihao.rainbow.brackets.settings.RainbowConfigurable" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bexru\Desktop\NodeJS_RSS\Express-REST-service\src" />
       <recent name="C:\Users\bexru\Desktop\NodeJS_RSS\Express-REST-service\src\helperError\logs" />
       <recent name="C:\Users\bexru\Desktop\NodeJS_RSS\Express-REST-service\src\logs" />
     </key>
@@ -136,7 +134,11 @@
       <workItem from="1603470885517" duration="108000" />
       <workItem from="1603471027299" duration="471000" />
       <workItem from="1603471528428" duration="122844000" />
-      <workItem from="1603883312412" duration="4262000" />
+      <workItem from="1603883312412" duration="5463000" />
+      <workItem from="1603894165919" duration="239000" />
+      <workItem from="1603963709298" duration="10490000" />
+      <workItem from="1604072109446" duration="101959000" />
+      <workItem from="1604473590055" duration="746000" />
     </task>
     <servers />
   </component>
@@ -159,6 +161,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="668" y="322" key="#ESLint" timestamp="1604473959071">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="668" y="322" key="#ESLint/0.0.1600.860@0.0.1600.860" timestamp="1604473959071" />
     <state x="538" y="139" width="665" height="582" key="#JavaScript" timestamp="1603876543879">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -175,6 +181,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="254" key="#Notifications/0.0.1600.860@0.0.1600.860" timestamp="1603472434791" />
+    <state x="571" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603978541612">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="571" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1603978541612" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1603472919402">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -227,10 +237,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1579" height="436" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1602508847752" />
-    <state x="510" y="115" key="SettingsEditor" timestamp="1603473219317">
+    <state x="510" y="115" key="SettingsEditor" timestamp="1603894373496">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="510" y="115" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603473219317" />
+    <state x="510" y="115" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603894373496" />
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602498538658">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -243,9 +253,13 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1602262261442" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1603473117599">
+    <state x="663" y="161" width="672" height="678" key="search.everywhere.popup" timestamp="1604161169594">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1603473117599" />
+    <state x="663" y="161" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1604161169594" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

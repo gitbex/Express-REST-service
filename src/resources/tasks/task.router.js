@@ -3,9 +3,10 @@ const Task = require('./task.model');
 const taskService = require('./task.service');
 const Handler = require('../../helperError/error');
 const LoggerReqRes = require('../../helperError/requestLogger');
+const auth = require('../../middleware/auth');
 
 // Get task by boardID
-router.route('/').get(async (req, res, next) => {
+router.route('/').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     const boardId = req.params.boardId;
@@ -17,7 +18,7 @@ router.route('/').get(async (req, res, next) => {
 });
 
 // Create Task
-router.route('/').post(async (req, res, next) => {
+router.route('/').post(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.boardId) {
@@ -36,7 +37,7 @@ router.route('/').post(async (req, res, next) => {
 });
 
 // Get Task by ID
-router.route('/:id').get(async (req, res, next) => {
+router.route('/:id').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
@@ -51,7 +52,7 @@ router.route('/:id').get(async (req, res, next) => {
 });
 
 // Update Task
-router.route('/:id').put(async (req, res, next) => {
+router.route('/:id').put(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
@@ -66,7 +67,7 @@ router.route('/:id').put(async (req, res, next) => {
 });
 
 // Delete Task
-router.route('/:id').delete(async (req, res, next) => {
+router.route('/:id').delete(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {

@@ -3,9 +3,10 @@ const { toResponse } = require('./user.model');
 const usersService = require('./user.service');
 const Handler = require('../../helperError/error');
 const LoggerReqRes = require('../../helperError/requestLogger');
+const auth = require('../../middleware/auth');
 
 // Get all Users
-router.route('/').get(async (req, res, next) => {
+router.route('/').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     const users = await usersService.getAll();
@@ -15,8 +16,8 @@ router.route('/').get(async (req, res, next) => {
   }
 });
 
-// Get User by ID
-router.route('/:id').get(async (req, res, next) => {
+// Get User by id
+router.route('/:id').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id) {
@@ -30,21 +31,25 @@ router.route('/:id').get(async (req, res, next) => {
 });
 
 // Create User
-router.route('/').post(async (req, res, next) => {
+router.route('/').post(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.body.login || !req.body.password || !req.body.name) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
     }
-    const user = await usersService.create(req.body);
-    res.json(toResponse(user));
+    const result = await usersService.create(req.body);
+
+    await result.generateAuthToken();
+    const user = toResponse(result);
+    // res.send({ user, token });
+    res.json(user);
   } catch (error) {
     return next(error);
   }
 });
 
 // Update User
-router.route('/:id').put(async (req, res, next) => {
+router.route('/:id').put(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.body) {
@@ -59,7 +64,7 @@ router.route('/:id').put(async (req, res, next) => {
 });
 
 // Remove User
-router.route('/:id').delete(async (req, res, next) => {
+router.route('/:id').delete(auth, async (req, res, next) => {
   try {
     if (!req.params.id) {
       throw new Handler.ErrorHandler(404, 'Please provide correct parameters');

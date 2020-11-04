@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const userRouter = require('./resources/users/user.router');
 const boardRouter = require('./resources/boards/board.router');
 const taskRouter = require('./resources/tasks/task.router');
+const loginRouter = require('./resources/login/login.router');
 const createError = require('http-errors');
 const morgan = require('morgan');
 const winston = require('./helperError/winston');
@@ -21,27 +22,6 @@ const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 app.use(express.json());
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-// Exceptions catcher
-process.on('uncaughtException', err => {
-  setTimeout(() => {
-    console.error(
-      `${new Date().toUTCString()} uncaughtException:`,
-      err.message
-    );
-    console.error(err.stack);
-    // eslint-disable-next-line no-process-exit
-    process.exit(0);
-  }, 2000);
-});
-
-process.on('unhandledRejection', error => {
-  setTimeout(() => {
-    console.log('Unhandled Rejection at:', error.stack || error);
-    // eslint-disable-next-line no-process-exit
-    process.exit(0);
-  }, 2000);
-});
-
 app.use('/', (req, res, next) => {
   if (req.originalUrl === '/') {
     res.send('Service is running!');
@@ -49,6 +29,19 @@ app.use('/', (req, res, next) => {
   }
   next();
 });
+
+// app.use((req, res, next) => {
+//   if (req.method === 'GET') {
+//     res.send('GET request are disabled');
+//   } else {
+//     return next();
+//   }
+// });
+
+// // Function for maintenance mode
+// app.use((req, res) => {
+//   res.status(503).send('Page under maintenance');
+// });
 
 app.use(
   morgan(
@@ -58,7 +51,9 @@ app.use(
     }
   )
 );
+app.use('/login', loginRouter);
 
+// app(authorisation)
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 boardRouter.use('/:boardId/tasks', taskRouter);
