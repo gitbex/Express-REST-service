@@ -21,7 +21,7 @@ router.route('/:id').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const user = await usersService.get(req.params.id);
     res.json(toResponse(user));
@@ -31,11 +31,11 @@ router.route('/:id').get(auth, async (req, res, next) => {
 });
 
 // Create User
-router.route('/').post(auth, async (req, res, next) => {
+router.route('/').post(async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.body.login || !req.body.password || !req.body.name) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const result = await usersService.create(req.body);
 
@@ -52,9 +52,10 @@ router.route('/:id').put(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.body) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const user = await usersService.update(req.params.id, req.body);
+
     res.json(toResponse(user));
   } catch (error) {
     return next(error);
@@ -65,7 +66,7 @@ router.route('/:id').put(auth, async (req, res, next) => {
 router.route('/:id').delete(auth, async (req, res, next) => {
   try {
     if (!req.params.id) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const user = await usersService.remove(req.params.id);
     res.json(toResponse(user));

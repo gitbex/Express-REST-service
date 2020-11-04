@@ -17,16 +17,16 @@ router.route('/').get(auth, async (req, res) => {
 });
 
 // Get Board from ID Router
-router.route('/:id').get(auth, async (req, res) => {
+router.route('/:id').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const board = await boardService.get(req.params.id);
     res.json(Board.toResponse(board));
   } catch (e) {
-    res.status(404).send(e.message);
+    return next(e);
   }
 });
 
@@ -59,7 +59,7 @@ router.route('/:id').put(auth, async (req, res, next) => {
 router.route('/:id').delete(auth, async (req, res, next) => {
   try {
     if (!req.params.id) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const board = await boardService.remove(req.params.id);
     res.json(Board.toResponse(board));

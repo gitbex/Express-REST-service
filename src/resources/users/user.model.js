@@ -36,12 +36,12 @@ userSchema.methods.generateAuthToken = async function() {
 userSchema.statics.findByCredentials = async (login, password) => {
   const user = await User.findOne({ login });
   if (!user) {
-    throw new Error('Unable to login');
+    throw new Error('Forbidden');
   }
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
-    throw new Error('Unable to login');
+    throw new Error('Forbidden');
   }
 
   return user;

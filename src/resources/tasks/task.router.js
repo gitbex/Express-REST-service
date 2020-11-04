@@ -22,7 +22,7 @@ router.route('/').post(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.boardId) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const tasks = await taskService.create(
       new Task.Task({
@@ -41,7 +41,7 @@ router.route('/:id').get(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const { id, boardId } = req.params;
     const task = await taskService.get(boardId, id);
@@ -56,7 +56,7 @@ router.route('/:id').put(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const { id, boardId } = req.params;
     const task = await taskService.update(id, boardId, req.body);
@@ -71,7 +71,7 @@ router.route('/:id').delete(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.params.id || !req.params.boardId) {
-      throw new Handler.ErrorHandler(404, 'Please provide correct parameters');
+      throw new Handler.ErrorHandler(403, 'Forbidden');
     }
     const { id, boardId } = req.params;
     const task = await taskService.remove(id, boardId);

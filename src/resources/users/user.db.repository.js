@@ -10,7 +10,7 @@ const getAll = async () => User.find({});
 const get = async id => {
   const user = await User.findById(id);
   if (!user) {
-    throw new Handler.ErrorHandler(404, `The user with id: ${id} not found`);
+    throw new Handler.ErrorHandler(403, 'Forbidden');
   } else {
     return user;
   }

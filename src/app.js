@@ -14,12 +14,14 @@ const bodyParser = require('body-parser');
 const { handleError } = require('./helperError/error');
 require('express-async-errors');
 const logger = require('./helperError/winston');
-// const helmet = require('helmet')
-// const cors = require('cors');
+const helmet = require('helmet');
+const cors = require('cors');
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
@@ -60,7 +62,6 @@ app.use((err, req, res, next) => {
     return;
   }
   handleError(err, res);
-  // next();
 });
 
 app.use('/', async (req, res) => {

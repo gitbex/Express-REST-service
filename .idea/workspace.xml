@@ -34,15 +34,16 @@
   <component name="ChangeListManager">
     <list default="true" id="47a71762-5c3e-4c00-9076-a15de2d953ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helperError/logs/app.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helperError/logs/request.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helperError/winston.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperError/winston.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mongodb/mangoose.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mongodb/mangoose.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/boards/board.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/boards/board.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/tasks/task.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/tasks/task.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users/user.db.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.db.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/users/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,8 @@
       <workItem from="1603894165919" duration="239000" />
       <workItem from="1603963709298" duration="10490000" />
       <workItem from="1604072109446" duration="101959000" />
-      <workItem from="1604473590055" duration="6606000" />
+      <workItem from="1604473590055" duration="15999000" />
+      <workItem from="1604516870270" duration="265000" />
     </task>
     <servers />
   </component>
