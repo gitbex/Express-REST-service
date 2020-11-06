@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const Handler = require('../../helperError/error');
 const { JWT_SECRET_KEY } = require('../../common/config');
 
 const userSchema = new mongoose.Schema(
@@ -27,7 +28,10 @@ const userSchema = new mongoose.Schema(
 // eslint-disable-next-line
 userSchema.methods.generateAuthToken = async function() {
   const user = this;
-  const token = jwt.sign({ _id: user._id.toString() }, JWT_SECRET_KEY);
+  const token = jwt.sign(
+    { _id: user._id.toString(), login: user.login },
+    JWT_SECRET_KEY
+  );
   user.tokens = user.tokens.concat({ token });
   await user.save();
   return token;
@@ -36,12 +40,12 @@ userSchema.methods.generateAuthToken = async function() {
 userSchema.statics.findByCredentials = async (login, password) => {
   const user = await User.findOne({ login });
   if (!user) {
-    throw new Error('Forbidden');
+    throw new Handler.ErrorHandler(403, 'Forbidden');
   }
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
-    throw new Error('Forbidden');
+    throw new Handler.ErrorHandler(403, 'Forbidden');
   }
 
   return user;

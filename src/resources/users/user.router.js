@@ -31,7 +31,7 @@ router.route('/:id').get(auth, async (req, res, next) => {
 });
 
 // Create User
-router.route('/').post(async (req, res, next) => {
+router.route('/').post(auth, async (req, res, next) => {
   LoggerReqRes.loggerReqRes(req);
   try {
     if (!req.body.login || !req.body.password || !req.body.name) {
