@@ -1,15 +1,3 @@
-Привет,  
-Я функция authorisation убрал на create.User что бы создать админ пользователь в базе, потом перед тем как сделать git push забыл вернуть функцию, если вернуть все работае, прошу баллы не снимать.
-
-// Create User
-`router.route('/').post(auth, async (req, res, next) => {`
-
-
-
-
-
-
-
 # RS School REST service
 
 ## Prerequisites
