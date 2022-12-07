@@ -65,7 +65,7 @@
     "morgan": "^1.10.0",
     "swagger-ui-express": "4.1.2",
     "uuid": "3.3.3",
-    "validator": "^13.1.17",
+    "validator": "^13.7.0",
     "winston": "^3.3.3",
     "yamljs": "0.3.0"
   },
